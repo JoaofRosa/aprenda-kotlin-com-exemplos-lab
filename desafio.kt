@@ -7,8 +7,6 @@ data class ConteudoEducacional(var nome: String, val duracao: Int = 60)
 data class Formacao(val nome: String, var conteudos: List<ConteudoEducacional>) {
     val inscritos = mutableListOf<Usuario>()
     val estadoMatricula = mutableMapOf<Usuario, EstadoMatricula>()
-
-    // Método para matricular um usuário na formação
     fun matricular(usuario: Usuario) {
         if (!inscritos.contains(usuario)) {
             inscritos.add(usuario)
